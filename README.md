@@ -22,4 +22,31 @@ Musik menjadi salah satu aspek penting bagi sebagian orang di dunia ini. Pada ab
 3. Mengimplementasikan collaborative-based filtering approach menggunakan algoritma deep learning.
 
 ## Data Understanding
+Dataset yang digunakan untuk membuat sistem rekomendasi lagu diambil dari platform kaggle dengan dataset dapat diakses pada link [berikut](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset/data). Dataset dipublikasikan oleh MaharshiPandya dengan usability 10/10. Data ini didapat dari spotify yang terdiri dari 1 file csv.
 
+### Keterangan Variabel
+
+Dataset ini memiliki 20 variabel dengan keterangan sebagai berikut.
+
+Variabel | Keterangan
+----------|----------
+track_id | ID lagu pada Spotify
+artists | Penyanyi pada lagu
+album_name | Nama album lagu
+track_name | Judul lagu
+popularity | Tingkat popularitas lagu dalam skala 0 - 100 (0 = tidak populer, 100 = sangat populer)
+duration_ms | Durasi lagu dalam satuan milidetik
+explicit | Apakah lagu memiliki lirik eksplisit
+danceability | Tingkat kesesuaian lagu untuk menari dalam skala 0 - 1 (0 = tidak cocok, 1 = sangat cocok)
+energy | Tingkat energi pada lagu dalam skala 0 - 1 (0 = tidak berenergi, 1 = sangat berenergi)
+key | Kunci not pada lagu
+loudness | Tingkat kekerasan suara dalam satuan desibel
+mode | Mode pada lagu (0 = minor, 1 = mayor)
+speechiness	| Tingkat kata yang diucapkan dalam skala 0 - 1 (0 = tidak ada, 1 = hanya berisi kata)
+acousticness | Tingkat akustik pada lagu dalam skala 0 - 1 (0 = tidak ada, 1 = pasti ada)
+instrumentalness | Tingkat instrumental pada lagu dalam skala 0 - 1 (0 = Bukan instrumental, 1 = instrumental)
+liveness | Tingkat kehadiran audience pada saat lagu dinyanyikan dalam skala 0 - 1 (0 = tidak ada, 1 = ada)
+valence | Jenis transportasi yang digunakan
+tempo | Tempo lagu dalam beat per menit
+time_signature | Tanda birama pada lagu
+track_genre | Genre lagu
