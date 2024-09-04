@@ -53,6 +53,8 @@ track_genre | Genre lagu
 
 ### Statistik Data
 
+Selanjutnya akan ditampilkan statistik data numerikal secara umum.
+
 popularity | duration_ms | danceability	| energy | key | loudness | mode | speechiness | cousticness | instrumentalness | liveness | valence | tempo | time_signature
 ----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------
 count |	114000 | 114000 | 114000 | 114000 | 114000 | 114000 | 114000 | 114000	| 114000 | 114000 | 114000 | 114000 | 114000 | 114000
