@@ -7,9 +7,11 @@ Musik menjadi salah satu aspek penting bagi sebagian orang di dunia ini. Pada ab
 ## Business Understanding
 
 ### Problem Statements
-1. Genre lagu apa yang favorit di kalangan masyarakat umum? Siapa penyanyi paling populer menurut orang-orang dalam data tersebut?
-2. Bagaimana cara agar baik pengguna maupun penyedia dapat selalu tertarik untuk mendengarkan musik?
-3. Bagaimana cara membuat sistem rekomendasi terbaik yang dapat diimplementasikan?
+1. Apa genre lagu yang paling favorit di kalangan masyarakat umum?
+2. Siapa penyanyi paling populer menurut orang-orang dalam data tersebut?
+3. Apakah ada hubungan antar variabel pada dataset yang dapat diinterpretasikan?
+4. Bagaimana cara agar baik pengguna maupun penyedia dapat selalu tertarik untuk mendengarkan musik?
+5. Bagaimana cara membuat sistem rekomendasi terbaik yang dapat diimplementasikan?
 
 ### Goals
 1. Mengetahui genre lagu maupun penyanyi paling populer, serta mencari hubungan antar variabel yang berkaitan dengan musik.
@@ -132,3 +134,23 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `energy` berkorelasi positif yang kuat terhadap variabel `loudness`, terlihat dari garis yang mengarah ke atas kanan, tetapi berkorelasi negatif yang cukup kuat terhadap variabel `acousticness`, terlihat dari garis yang mengarah ke bawah kanan.
 * Secara umum, semakin keras suara lagu tersebut, semakin berenergi lagu tersebut, terutama pada genre seperti metal music. Oleh karena itu, variabel `energy` dan `loudness` berkorelasi positif yang kuat.
 * Sementara itu, lagu akustik biasanya menggunakan alat musik akustik yang tentu suaranya lebih pelan dibanding alat musik elektrik, serta lagu akustik biasa dinyanyikan dengan suara yang pelan, indah, dan tanpa batuan mikrofon. Akibatnya, jika lagu tersebut merupakan akustik, tentu energinya lebih rendah dibanding lagu non akustik. Oleh karena itu, variabel `energy` dan `acousticness` berkorelasi negatif yang cukup kuat.
+
+#### 6. Korelasi Variabel `loudness` dengan `acousticness` dan `instrumentalness`
+
+<img src = "gambar/6. Scatter Plot (3).png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Terlihat bahwa variabel `loudness` berkorelasi negatif yang cukup kuat terhadap variabel `acousticness` dan `instrumentalness`, terlihat dari garis yang mengarah ke bawah kanan.
+* Seperti pada pembahasan sebelumnya, lagu akustik cenderung memiliki suara yang pelan dan indah sehingga suaranya tidak kencang.
+* Selain itu, musik yang hanya instrumental (hanya iringan alat musik tanpa lirik) cenderung memiliki suara konstan yang cukup kencang dibandingkan dengan musik non instrumental yang iringan musiknya akan sedikit pelan ketika lirik lagu dinyanyikan.
+
+#### 7. Korelasi Variabel `instrumentalness` dengan `valence`
+
+<img src = "gambar/7. Scatter Plot (4).png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Terlihat bahwa variabel `instrumentalness` berkorelasi negatif yang cukup kuat terhadap variabel `valence`, terlihat dari garis yang mengarah ke bawah kanan.
+* Biasanya, suasana ceria dalam lagu dibawakan bersamaan dengan nyanyian lirik lagu. Sementara suasana negatif, terutama sedih, dibawakan hanya dalam bentuk instrumental (contohnya dengan violin saja)
+
+#### 8. Top 10 Album dengan Jumlah Musik Terbanyak
+
