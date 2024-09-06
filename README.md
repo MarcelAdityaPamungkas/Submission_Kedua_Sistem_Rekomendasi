@@ -73,12 +73,46 @@ Kolom-kolom numerikal: [`popularity`, `duration_ms`,	`danceability`, `energy`, `
 Kolom-kolom kategorikal: [`explicit`, `track_genre`]\
 Sementara kolom-kolom lainnya yaitu [`track_id`, `artists`, `album_name`, `track_name`] tidak dapat dikategorikan. 
 
-#### Analisis Kolom `Explicit`
+#### 1. Analisis Kolom `Explicit`
 
 <img src = "gambar/1. Distribusi Kolom Explisit.png"/> <br>
 
 Dari gambar di atas, hanya 8.55% dari seluruh lagu pada dataset yang memiliki lirik bersifat eksplisit. 
 
-#### Distribusi Kolom Numerikal Menggunakan Histogram
+#### 2. Distribusi Kolom Numerikal Menggunakan Histogram
 
+<img src = "gambar/2. Histogram dari Kolom Numerikal.png"/> <br>
 
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Kolom `danceability`, `valence`, dan `tempo` mendekati distribusi normal. Kolom `popularity` juga mendekati distribusi normal, namun mayoritas data bernilai 0.
+* Kolom `loudness` memiliki histogram yang bersifat left-skewed. Artinya mayoritas data bernilai tinggi, yang berarti banyak musik memiliki `loudness` sekitar -15 hingga 0 dB.
+* Kolom `speechiness`, `acousticness`, dan `liveness` memiliki histogram yang bersifat right-skewed. Artinya mayoritas data pada kolom-kolom tersebut bernilai rendah.
+* Kolom `energy` memiliki distribusi yang semakin tinggi untuk tingkat energi yang semakin tinggi.
+* Kolom `duration_ms` menunjukkan mayoritas lagu memiliki durasi dibawah 1000000 milidetik.
+* Kolom `mode` hanya memiliki 2 nilai data, yaitu 0 dan 1, sesuai dengan arti dari `mode`. Nilai 1 lebih banyak dari 0 yang menunjukkan mayoritas lagu menggunakan skala mayor.
+* Kolom `instrumentalness` memiliki nilai mayoritas mendekati yang berarti mayoritas lagu bukan merupakan instrumental (hanya berisi iringan musik tanpa lirik).
+
+#### 3. Korelasi Antar Variabel Numerikal Menggunakan Heatmap
+
+Sebelum melihat korelasi dari seluruh variabel numerik, akan ditetapkan batasan nilai korelasi beserta artinya. Misalkan $x$ merupakan nilai korelasi suatu variabel
+* Korelasi bernilai $0.00 \leq x \leq 0.30$ dan $-0.30 \leq x \leq 0.00$ merupakan korelasi yang bersifat sangat lemah. Artinya, variabel-variabel tersebut memiliki keterkaitan yang kecil atau bahkan tidak ada kaitan.
+* Korelasi bernilai $0.31 \leq x \leq 0.60$ dan $-0.60 \leq x \leq -0.31$ merupakan korelasi yang bersifat cukup kuat. Artinya, variabel-variabel tersebut memiliki keterkaitan yang cukup kuat satu sama lain.
+* Korelasi bernilai $0.61 \leq x \leq 1.00$ dan $-1.00 \leq x \leq -0.61$ merupakan korelasi yang bersifat sangat kuat. Artinya, variabel-variabel tersebut memiliki keterkaitan yang kuat atau bahkan sangat kuat.
+
+Berdasarkan 3 tingkatan tersebut, korelasi dibagi menjadi 2, yaitu korelasi positif dan korelasi negatif.
+* Korelasi positif merupakan korelasi yang bernilai $0.00 <x \leq 1.00$. Artinya, semakin tinggi nilai salah satu variabel, maka nilai variabel lainnya juga akan semakin tinggi. Hal ini berlaku sebaliknya.
+* Korelasi positif merupakan korelasi yang bernilai $-1.00 <x \leq 0.00$. Artinya, semakin tinggi nilai salah satu variabel, maka nilai variabel lainnya justru akan semakin rendah. Hal ini berlaku sebaliknya.
+
+Berikut merupakan heatmap dari kolom-kolom numerikal pada dataset.
+
+<img src = "gambar/3. Heatmap Kolom Numerikal.png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`
+* Variabel `energy` berkorelasi positif yang kuat terhadap variabel `loudness`, namun berkorelasi negatif yang kuat terhadap variabel `acousticness`
+* Variabel `loudness` berkorelasi negatif yang cukup kuat terhadap variabel `acousticness` dan variabel `instrumentalness`
+* Variabel `instrumentalness` berkorelasi negatif yang cukup kuat terhadap variabel `valence`
+
+Selain yang disebutkan di atas, seluruh variabel memiliki korelasi yang lemah antara satu dengan yang lain. Selanjutnya, akan dilihat variabel-variabel yang berkorelasi dengan variabel lainnya.
+
+#### 4. 
