@@ -157,3 +157,25 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 <img src = "gambar/08. Top 10 Album.png"/> <br>
 
 Dari gambar di atas, album `Alternative Christmas 2022` merupakan album yang memiliki jumlah lagu terbanyak, hingga mendekati 200 lagu.
+
+#### 9. Analisis Genre Musik
+
+Setelah mencari jumlah data unik pada kolom `track_genre` dengan `unique_genres = data["track_genre"].unique()`, didapat 114 genre yang ada di dalam dataset tersebut. Selanjutnya, akan dianalisis beberapa kolom berdasarkan genrenya.
+
+<img src = "gambar/09. Top 10 Genre.png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Pada gambar `Top 10 Jumlah Penyanyi Pada Setiap Genre`, genre dubstep merupakan genre yang memiliki artis terbanyak, berjumlah lebih dari 700.
+* Pada gambar `Jumlah Lagu pada Top 0.1% Berdasarkan Genre`, genre pop memiliki jumlah lagu terbanyak pada top 0.1% lagu dengan jumlah lebih dari 20.
+* Pada gambar `Top 10 Genre dengan Rasio Rata-Rata Eksplisit Tertinggi`, genre komedi merupakan genre yang memiliki rasio lirik eksplisit tertinggi dibandingkan genre lainnya dengan rasio sekitar 0.65.
+* Pada gambar `Top 10 Genre dengan Rata-Rata Popularitas Tertinggi`, genre pop-film merupakan genre yang memiliki popularitas tertinggi secara rata-rata dibandingkan dengan genre lainnya, mendekati skor 60.
+
+#### 10. Analisis Penyanyi
+
+Setelah mencari jumlah data unik pada kolom `artists` dengan `unique_artist = data["artists"].unique()`, didapat 31437 penyanyi yang ada di dalam dataset tersebut. Selanjutnya, akan dicari top 10 dari beberapa kolom berdasarkan penyanyinya.
+
+<img src = "gambar/10. Top 10 Penyanyi.png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Pada gambar `Top 10 Penyanyi dengan Jumlah Lagu terbanyak`, The Beatles telah membuat lagu terbanyak dibandingkan penyanyi lainnya, yaitu lebih dari 250.
+* Pada gambar `Top 10 Penyanyi dengan Rata-Rata Popularitas Tertinggi`, Sam Smith dan Kim Petras memiliki nilai popularitas tertinggi dibandingkan penyanyi lainnya, yaitu mendekati 100.
