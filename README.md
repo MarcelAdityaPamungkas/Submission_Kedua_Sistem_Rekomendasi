@@ -46,7 +46,7 @@ speechiness	| Tingkat kata yang diucapkan dalam skala 0 - 1 (0 = tidak ada, 1 = 
 acousticness | Tingkat akustik pada lagu dalam skala 0 - 1 (0 = tidak ada, 1 = pasti ada)
 instrumentalness | Tingkat instrumental pada lagu dalam skala 0 - 1 (0 = Bukan instrumental, 1 = instrumental)
 liveness | Tingkat kehadiran audience pada saat lagu dinyanyikan dalam skala 0 - 1 (0 = tidak ada, 1 = ada)
-valence | Jenis transportasi yang digunakan
+valence | Tingkat perasaan pada lagu dalam skala 0 - 1 (0 = Negatif (sedih, marah), 1 = Positif (senang, euforia)
 tempo | Tempo lagu dalam beat per menit
 time_signature | Tanda birama pada lagu
 track_genre | Genre lagu
@@ -115,4 +115,20 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 Selain yang disebutkan di atas, seluruh variabel memiliki korelasi yang lemah antara satu dengan yang lain. Selanjutnya, akan dilihat variabel-variabel yang berkorelasi dengan variabel lainnya.
 
-#### 4. 
+#### 4. Korelasi Variabel `danceability` dengan `valence`
+
+<img src = "gambar/4. Scatter Plot (1).png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Terlihat bahwa variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`, terlihat dari garis yang mengarah ke atas kanan.
+* Kedua variabel ini berkorelasi positif cukup kuat karena lagu yang memiliki perasaan positif seperti senang tentu juga cocok untuk menari.
+* Akan aneh apabila lagu sedih bisa digunakan untuk menari, sehingga dapat dilihat bahwa lagu yang yang memang memiliki perasaan negatif seperti sedih dan marah tidak cocok untuk menari.
+
+#### 5. Korelasi Variabel `energy` dengan `loudness` dan `acousticness`
+
+<img src = "gambar/5. Scatter Plot (2).png"/> <br>
+
+Gambar di atas dapat diinterpretasikan sebagai berikut.
+* Terlihat bahwa variabel `energy` berkorelasi positif yang kuat terhadap variabel `loudness`, terlihat dari garis yang mengarah ke atas kanan, tetapi berkorelasi negatif yang cukup kuat terhadap variabel `acousticness`, terlihat dari garis yang mengarah ke bawah kanan.
+* Secara umum, semakin keras suara lagu tersebut, semakin berenergi lagu tersebut, terutama pada genre seperti metal music. Oleh karena itu, variabel `energy` dan `loudness` berkorelasi positif yang kuat.
+* Sementara itu, lagu akustik biasanya menggunakan alat musik akustik yang tentu suaranya lebih pelan dibanding alat musik elektrik, serta lagu akustik biasa dinyanyikan dengan suara yang pelan, indah, dan tanpa batuan mikrofon. Akibatnya, jika lagu tersebut merupakan akustik, tentu energinya lebih rendah dibanding lagu non akustik. Oleh karena itu, variabel `energy` dan `acousticness` berkorelasi negatif yang cukup kuat.
