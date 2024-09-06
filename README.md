@@ -75,4 +75,10 @@ Sementara kolom-kolom lainnya yaitu [`track_id`, `artists`, `album_name`, `track
 
 #### Analisis Kolom `Explicit`
 
-<img src = "gambar/Analisis_Kategorikal.png"/> <br>
+<img src = "gambar/1. Distribusi Kolom Explisit.png"/> <br>
+
+Dari gambar di atas, hanya 8.55% dari seluruh lagu pada dataset yang memiliki lirik bersifat eksplisit. 
+
+#### Distribusi Kolom Numerikal Menggunakan Histogram
+
+
