@@ -65,3 +65,14 @@ min	| 0.000000 | 0.000000e+00	| 0.000000 | 0.000000	| 0.000000 | -49.531000	| 0.
 50%	| 35.000000	| 2.129060e+05 | 0.580000	| 0.685000 | 5.000000	| -7.004000	| 1.000000 | 0.048900	| 0.169000 | 0.000042	| 0.132000 | 0.464000	| 122.017000 | 4.000000
 75%	| 50.000000	| 2.615060e+05 | 0.695000	| 0.854000 | 8.000000	| -5.003000	| 1.000000 | 0.084500	| 0.598000 | 0.049000	| 0.273000 | 0.683000	| 140.071000 | 4.000000
 max	| 100.000000 | 5.237295e+06 | 0.985000 | 1.000000 |	11.000000	| 4.532000 | 1.000000	| 0.965000 | 0.996000 | 1.000000 | 1.000000	| 0.995000 | 243.372000	| 5.000000
+
+### Exploratory Data Analysis (EDA)
+
+Dari variabel-variabel yang diketahui, variabel dapat dibagi menjadi 2 jenis, yaitu variabel numerikal dan variabel kategorikal. Berikut merupakan kolom-kolom yang termasuk dalam variabel numerikal maupun kategorikal.\
+Kolom-kolom numerikal: [`popularity`, `duration_ms`,	`danceability`, `energy`, `key`, `loudness`, `mode`, `speechiness`,	`acousticness`, `instrumentalness`, `liveness`, `valence tempo`, `time_signature`]\
+Kolom-kolom kategorikal: [`explicit`, `track_genre`]\
+Sementara kolom-kolom lainnya yaitu [`track_id`, `artists`, `album_name`, `track_name`] tidak dapat dikategorikan. 
+
+#### Analisis Kolom `Explicit`
+
+<img src = "gambar/Analisis_Kategorikal.png"/> <br>
