@@ -77,13 +77,13 @@ Sementara kolom-kolom lainnya yaitu [`track_id`, `artists`, `album_name`, `track
 
 #### 1. Analisis Kolom `Explicit`
 
-<img src = "gambar/1. Distribusi Kolom Explisit.png"/> <br>
+<img src = "gambar/01. Distribusi Kolom Explisit.png"/> <br>
 
 Dari gambar di atas, hanya 8.55% dari seluruh lagu pada dataset yang memiliki lirik bersifat eksplisit. 
 
 #### 2. Distribusi Kolom Numerikal Menggunakan Histogram
 
-<img src = "gambar/2. Histogram dari Kolom Numerikal.png"/> <br>
+<img src = "gambar/02. Histogram dari Kolom Numerikal.png"/> <br>
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Kolom `danceability`, `valence`, dan `tempo` mendekati distribusi normal. Kolom `popularity` juga mendekati distribusi normal, namun mayoritas data bernilai 0.
@@ -107,7 +107,7 @@ Berdasarkan 3 tingkatan tersebut, korelasi dibagi menjadi 2, yaitu korelasi posi
 
 Berikut merupakan heatmap dari kolom-kolom numerikal pada dataset.
 
-<img src = "gambar/3. Heatmap Kolom Numerikal.png"/> <br>
+<img src = "gambar/03. Heatmap Kolom Numerikal.png"/> <br>
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`
@@ -119,7 +119,7 @@ Selain yang disebutkan di atas, seluruh variabel memiliki korelasi yang lemah an
 
 #### 4. Korelasi Variabel `danceability` dengan `valence`
 
-<img src = "gambar/4. Scatter Plot (1).png"/> <br>
+<img src = "gambar/04. Scatter Plot (1).png"/> <br>
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`, terlihat dari garis yang mengarah ke atas kanan.
@@ -128,7 +128,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 5. Korelasi Variabel `energy` dengan `loudness` dan `acousticness`
 
-<img src = "gambar/5. Scatter Plot (2).png"/> <br>
+<img src = "gambar/05. Scatter Plot (2).png"/> <br>
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `energy` berkorelasi positif yang kuat terhadap variabel `loudness`, terlihat dari garis yang mengarah ke atas kanan, tetapi berkorelasi negatif yang cukup kuat terhadap variabel `acousticness`, terlihat dari garis yang mengarah ke bawah kanan.
@@ -137,7 +137,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 6. Korelasi Variabel `loudness` dengan `acousticness` dan `instrumentalness`
 
-<img src = "gambar/6. Scatter Plot (3).png"/> <br>
+<img src = "gambar/06. Scatter Plot (3).png"/> <br>
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `loudness` berkorelasi negatif yang cukup kuat terhadap variabel `acousticness` dan `instrumentalness`, terlihat dari garis yang mengarah ke bawah kanan.
@@ -146,7 +146,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 7. Korelasi Variabel `instrumentalness` dengan `valence`
 
-<img src = "gambar/7. Scatter Plot (4).png"/> <br>
+<img src = "gambar/07. Scatter Plot (4).png"/> <br>
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `instrumentalness` berkorelasi negatif yang cukup kuat terhadap variabel `valence`, terlihat dari garis yang mengarah ke bawah kanan.
@@ -154,6 +154,6 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 8. Top 10 Album dengan Jumlah Musik Terbanyak
 
-<img src = "gambar/8. Top 10 Album.png"/> <br>
+<img src = "gambar/08. Top 10 Album.png"/> <br>
 
 Dari gambar di atas, album `Alternative Christmas 2022` merupakan album yang memiliki jumlah lagu terbanyak, hingga mendekati 200 lagu.
