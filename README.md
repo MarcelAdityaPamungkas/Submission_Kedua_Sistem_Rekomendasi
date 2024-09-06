@@ -154,3 +154,6 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 8. Top 10 Album dengan Jumlah Musik Terbanyak
 
+<img src = "gambar/8. Top 10 Album.png"/> <br>
+
+Dari gambar di atas, album `Alternative Christmas 2022` merupakan album yang memiliki jumlah lagu terbanyak, hingga mendekati 200 lagu.
