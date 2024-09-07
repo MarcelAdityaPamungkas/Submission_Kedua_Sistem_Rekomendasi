@@ -213,3 +213,58 @@ Untuk collaborative filtering, kita juga akan fokus pada judul lagu beserta genr
 * `track_name`
 * `popularity`
 
+Karena `track_id` dan `track_name` memiliki tipe data string dan unik, maka dilakukan encoding terhadap kedua kolom tersebut, kemudian dibentuk dataframe yang berisi kolom `track_id` yang sudah diencoding, kolom `track_name` yang sudah diencoding, dan `popularity`. Contoh dari dataframe dapat dilihat pada tabel berikut.
+
+| No | track | name | popularity |
+|-----|-----|-----|-----|
+| 113186 | 88965 | 72967 | 50.0 |
+| 42819 |	38267	| 32043 | 11.0 |
+| 59311 |	50834	| 42419 |	0.0 |
+| 90417 |	10752	| 9489 | 34.0 |
+| 61000 |	52275	| 43640 |	57.0 |
+
+Setelah data yang diperlukan telah diencoding, selanjutnya data dibagi menjadi dua, yaitu data training dan data testing untuk pembuatan dan pelatihan model. Data training digunakan untuk melatih model dengan data yang ada, sedangkan data testing digunakan untuk menguji model yang dibuat menggunakan data yang belum dilatih. Pembagian data ini dilakukan dengan perbandingan 80% : 20% untuk data training dan data testing.
+
+## Modelling and Result
+
+### 1. Content-Based Filtering
+
+Content-based filtering menggunakan cosine similarity sebagai algoritma untuk membuat sistem rekomendasi berdasarkan content-based filtering approach. Cosine similarity mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama. Ia menghitung sudut cosinus antara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity. Cosine similarity dirumuskan sebagai berikut.
+
+$$Cos (\theta) = \frac{\sum_1^n a_ib_i}{\sqrt{\sum_1^n a_i^2}\sqrt{\sum_1^n b_i^2}}$$
+
+Pada python, kita akan menggunakan  `cosine_similarity` untuk mendapatkan nilai cosinus dua vektor dalam matriks. Cosine similarity memiliki kelebihan seperti output yang ternormalisasi (rentang -1 hingga 1) sehingga memudahkan interpretasi, penggunaan yang mudah dan sederhana, serta efisien untuk data sparse berdimensi tinggi, seperti TF-IDF. Meski demikian, cosine similarity memiliki beberapa kelemahan, seperti menganggap seluruh faktor/parameter sama penting, sensitif terhadap perubahan 'sudut vektor', dan tidak selalu cocok untuk data negatif. Setelah dibentuk sistem rekomendasi, selanjutnya akan diuji sistem rekomendasi ini untuk menampilkan top 10 rekomendasi berdasarkan lagu yang didengar/dipilih oleh user. Diperoleh hasil berikut.
+
+`content_based_music_recommendations('Fire - Killer Hertz Remix')`
+
+| No | track_name |	track_id | album_name |	track_genre |
+|-----|-----|-----|-----|-----|
+| 0 |	Lilith's Club	| 4LqkHTCD7pwRtSkrIQSwk2 | Devil May Cry (Original Game Soundtrack)	| breakbeat |
+| 1	| Lilith's Club	| 4LqkHTCD7pwRtSkrIQSwk2 | Devil May Cry (Original Game Soundtrack)	| drum-and-bass |
+| 2	| Golden | 6PvyiMpxf25jjnZdF4DKIG	| Commix Presents Dusted (Selected Works 2003 - ...	| drum-and-bass |
+| 3	| Golden | 5qtyotxUJIumSIkklcJL50	| Golden | dubstep |
+| 4	| Golden | 4ptzVhD7TWh4aBkhWEzz0o	| Darkbloom |	metalcore |
+| 5	| Find Me |	6xB7E0HOWznwiO0v56mqwD | Find Me | drum-and-bass |
+| 6	| Find Me | 0hQnWNnpCxU7dE1BkCAbXt | Hope	| drum-and-bass |
+| 7	| Find Me |	73zHDJiSMd6wCpxKNWWEPy | Find Me | groove |
+| 8	| Find Me |	6aWiGv6hPG0o3ri7QHNs8t | Joytime | progressive-house |
+| 9	| Engine Room |	00btR3u8FwO3Ip97Az3nZM | Drum & Bass Summer Slammers: 2012 Sampler | drum-and-bass |
+
+### 2. Collaborative Filtering
+
+Collaborative Filtering menggunakan deep learning, tepatnya embedding layer untuk membuat model deep learning. Embedding layer merupakan tipe layer pada deep learning yang digunakan untuk mentransformasikan data kategorikal menjadi vektor dengan nilai kontinu. Pada python, kita menggunakan `tensorflow.keras.layers Embedding` untuk membentuk embedding layer. Embedding Layer memiliki kelebihan seperti mengurangi kompleksitas model, dapat digunakan di berbagai macam algoritma deep learning, dan menangkap hubungan semantic pada data. Meski demikian, embedding layer juga memiliki beberapa kelemahan, seperti membutuhkan data yang banyak, sensitif terhadap hyperparameter, dan cold start problem. Setelah model dibentuk dan dilatih, diperoleh hasil `root_mean_squared_error: 0.0303` untuk data training dan `val_root_mean_squared_error: 0.1892` untuk data testing. Nilai tersebut sudah bagus untuk digunakan dalam sistem rekomendasi, sehingga dapat dibentuk sistem rekomendasi berdasarkan model tersebut. Selanjutnya, akan diuji sistem rekomendasi ini untuk menampilkan top 10 rekomendasi berdasarkan lagu yang didengar/dipilih oleh user. Diperoleh hasil berikut.
+
+`recommend_tracks_based_on_track_name("Fire - Killer Hertz Remix", top_n = 10)`
+
+Rekomendasi berdasarkan track dengan judul: 'Fire - Killer Hertz Remix'\
+10 Rekomendasi Terbaik:\
+ID Track: 18asYwWugKjjsihZ0YvRxO, Judul Track: The Motto\
+ID Track: 2dpaYNEQHiRxtZbfNsse99, Judul Track: Happier\
+ID Track: 4zN21mbAuaD0WqtmaTZZeP, Judul Track: Ferrari\
+ID Track: 4h9wh7iOZ0GGn8QVp4RAOB, Judul Track: I Ain't Worried\
+ID Track: 0lYBSQXN6rCTvUZvg9S0lU, Judul Track: Let Me Love You\
+ID Track: 48AJSd42lXpicsGqcgopof, Judul Track: X ÚLTIMA VEZ\
+ID Track: 6f3Slt0GbA2bPZlz0aIFXN, Judul Track: The Business\
+ID Track: 3kUq4sBcmxhnOtNysZ9yrp, Judul Track: Feliz Cumpleaños Ferxxo\
+ID Track: 7e89621JPkKaeDSTQ3avtg, Judul Track: Sweet Home Alabama\
+ID Track: 6GG73Jik4jUlQCkKg9JuGO, Judul Track: The Middle
