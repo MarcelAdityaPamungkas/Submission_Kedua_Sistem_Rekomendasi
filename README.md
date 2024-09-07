@@ -179,3 +179,30 @@ Setelah mencari jumlah data unik pada kolom `artists` dengan `unique_artist = da
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Pada gambar `Top 10 Penyanyi dengan Jumlah Lagu terbanyak`, The Beatles telah membuat lagu terbanyak dibandingkan penyanyi lainnya, yaitu lebih dari 250.
 * Pada gambar `Top 10 Penyanyi dengan Rata-Rata Popularitas Tertinggi`, Sam Smith dan Kim Petras memiliki nilai popularitas tertinggi dibandingkan penyanyi lainnya, yaitu mendekati 100.
+
+## Data Preparation
+
+Karena data yang digunakan sedikit berbeda antara content-based filtering dengan collaborative filtering, maka data preparation dari kedua approach tersebut akan dilakukan secara masing-masing.
+
+### 1. Content-Based Filtering
+Untuk content-based filtering, kita akan fokus pada judul lagu beserta genre dari lagu tersebut. Oleh karena itu, kita hanya akan mengambil 4 kolom dari data yang dimiliki, yaitu
+* `track_id`
+* `track_name`
+* `album_name`
+* `track_genre`
+
+Selanjutnya, digunakan TfidfVectorizer() pada genre lagu untuk menghasilkan output berupa angka antara 0 - 1. Lalu, dibentuk dataframe yang berisi genre lagu yang telah dilakukan vektorisasi dengan TfidfVectorizer() sebagai kolom dan seluruh judul lagu sebagai barisnya. Hal ini dilakukan karena akan digunakan cosine similarity pada content-based filtering, dimana cosine similarity memerlukan bentuk angka agar dapat dihitung. Contoh dari dataframe dapat dilihat pada tabel berikut.
+
+| track_name | acoustic |	afrobeat | age | alt | alternative | ambient | and | anime | bass |	black	| ... | swedish |	synth	| tango	| techno | tonk |	trance | trip |	tunes |	turkish	| world |
+| --------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| Comedy | 1.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000000 |
+| Ghost - Acoustic | 1.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000000 |
+| To Begin Again | 1.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000000 |
+| Can't Help Falling In Love | 1.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000000 |
+| Hold On	| 1.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.000000 |
+| ...	| ... |	...	| ...	| ...	| ... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |	... |
+| Sleep My Little Boy	| 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.707107 |
+| Water Into Light | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.707107 |
+| Miss Perfumado | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.707107 |
+| Friends | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.707107 |
+| Barbincor | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | ... | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.707107 |
