@@ -268,3 +268,24 @@ ID Track: 6f3Slt0GbA2bPZlz0aIFXN, Judul Track: The Business\
 ID Track: 3kUq4sBcmxhnOtNysZ9yrp, Judul Track: Feliz Cumpleaños Ferxxo\
 ID Track: 7e89621JPkKaeDSTQ3avtg, Judul Track: Sweet Home Alabama\
 ID Track: 6GG73Jik4jUlQCkKg9JuGO, Judul Track: The Middle
+
+## Evaluation
+
+Perlu diperhatikan bahwa tidak ada evaluasi pada penggunaan cosine similarity, sehingga hanya pada collaborative filtering yang akan dievaluasi hasilnya. Pada pelatihan model tersebut, metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE)
+
+### Sekilas tentang RMSE
+
+Root Mean Squared Error (RMSE) merupakan salah satu metode untuk menghitung error pada pelatihan model dengan cara menghitung jarak rata-rata antara nilai yang diprediksi dengan nilai sesungguhnya. RMSE dirumuskan sebagai berikut.
+
+$$RSME = \sqrt{\frac{\sum_{i=1}^n{(y_i - \hat{y_i})}^2}{N}}$$
+
+Keterangan:
+* $y_i$: Nilai sesungguhnya pada observasi ke-i
+* $\hat{y_i}$: Nilai prediksi pada observasi ke-i
+* $N$: Jumlah observasi
+
+Jika nilai prediksi sangat mendekati nilai sesungguhnya, maka nilai dari $(y_i - \hat{y_i})$ akan semakin mengecil. Artinya, semakin kecil nilai dari RSME atau bahkan mendekati nol, maka model yang digunakan telah akurat dan baik.
+
+### Evaluasi Model
+
+Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RSME = 0.0303` untuk data training dan `RSME = 0.1892` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
