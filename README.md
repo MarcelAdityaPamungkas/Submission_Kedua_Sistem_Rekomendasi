@@ -2,7 +2,9 @@
 
 ## Project Overview
 
-Musik menjadi salah satu aspek penting bagi sebagian orang di dunia ini. Pada abad ke-19, musik mulai banyak dibuat dengan alat-alat musik yang masih terbilang tradisional dan kuno. 
+Musik menjadi salah satu aspek penting bagi sebagian orang di dunia ini. Pada abad ke-19, musik mulai banyak dibuat dengan alat-alat musik yang masih terbilang tradisional dan kuno. Dalam psikologi, musik dipelajari karena kemampuannya untuk mempengaruhi emosi, kognisi, dan perilaku manusia. Penelitian menunjukkan bahwa musik dapat mempengaruhi suasana hati dan tingkat stres seseorang. Bahkan, terapi musik telah digunakan dalam berbagai kondisi klinis seperti depresi, kecemasan, dan pemulihan pasca-trauma. Studi neuropsikologi telah mengungkapkan bagaimana otak memproses musik, dengan temuan bahwa musik dapat merangsang area-area yang terkait dengan penghargaan, emosi, dan ingatan. Selain itu, musik memiliki peran penting dalam pendidikan dan perkembangan kognitif anak. Penelitian menunjukkan bahwa keterlibatan dalam pembelajaran musik dapat meningkatkan kemampuan memori, bahasa, dan pemecahan masalah. Pendidikan musik di sekolah-sekolah juga berkontribusi pada perkembangan sosial dan emosional siswa, seperti meningkatkan kerja sama, disiplin diri, dan kreativitas.
+
+Seiring dengan perkembangan zaman, teknologi telah mengubah cara musik diproduksi, didistribusikan, dan dikonsumsi. Revolusi digital di bidang musik dimulai dengan munculnya file MP3 dan platform streaming, yang memungkinkan akses mudah ke musik di seluruh dunia. Algoritma dan kecerdasan buatan atau Artificial Intelligence (AI) kini digunakan untuk membuat rekomendasi musik personal, mendeteksi genre, atau bahkan menghasilkan musik. Oleh karena itu, penulis ingin mengembangkan sistem rekomendasi musik dengan 2 approach, yaitu content-based approach dan collaborative approach untuk memberikan sistem rekomendasi terbaik untuk pengguna. Hal ini penting agar pengguna dapat mendapatkan lagu rekomendasi terbaik untuk mereka serta juga penting bagi penyedia layanan agar mereka mampu terus berkembang untuk memberikan pelayanan terbaik bagi konsumennya.
 
 ## Business Understanding
 
@@ -10,8 +12,7 @@ Musik menjadi salah satu aspek penting bagi sebagian orang di dunia ini. Pada ab
 1. Apa genre lagu yang paling favorit di kalangan masyarakat umum?
 2. Siapa penyanyi paling populer menurut orang-orang dalam data tersebut?
 3. Apakah ada hubungan antar variabel pada dataset yang dapat diinterpretasikan?
-4. Bagaimana cara agar baik pengguna maupun penyedia dapat selalu tertarik untuk mendengarkan musik?
-5. Bagaimana cara membuat sistem rekomendasi terbaik yang dapat diimplementasikan?
+4. Bagaimana cara membuat sistem rekomendasi terbaik yang dapat diimplementasikan?
 
 ### Goals
 1. Mengetahui genre lagu maupun penyanyi paling populer, serta mencari hubungan antar variabel yang berkaitan dengan musik.
@@ -277,7 +278,7 @@ Perlu diperhatikan bahwa tidak ada evaluasi pada penggunaan cosine similarity, s
 
 Root Mean Squared Error (RMSE) merupakan salah satu metode untuk menghitung error pada pelatihan model dengan cara menghitung jarak rata-rata antara nilai yang diprediksi dengan nilai sesungguhnya. RMSE dirumuskan sebagai berikut.
 
-$$RSME = \sqrt{\frac{\sum_{i=1}^n{(y_i - \hat{y_i})}^2}{N}}$$
+$$RMSE = \sqrt{\frac{\sum_{i=1}^n{(y_i - \hat{y_i})}^2}{N}}$$
 
 Keterangan:
 * $y_i$: Nilai sesungguhnya pada observasi ke-i
@@ -288,4 +289,32 @@ Jika nilai prediksi sangat mendekati nilai sesungguhnya, maka nilai dari $(y_i -
 
 ### Evaluasi Model
 
-Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RSME = 0.0303` untuk data training dan `RSME = 0.1892` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
+Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RMSE = 0.0303` untuk data training dan `RMSE = 0.1892` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
+
+<img src = "gambar/11. Metrik Evaluasi.png"/> <br>
+
+Dari gambar tersebut, terlihat bahwa nilai RMSE pada data training selalu menurun, sementara nilai RSME pada data testing awalnya menurun, namun setelah 10 epoch, nilai RSME mulai stagnan. Meski RSME pada data testing lebih besar dari data training, namun karena keduanya telah bernilai sangat mendekati 0, maka model yang digunakan telah baik dan akurat untuk membuat sistem rekomendasi.
+
+## Kesimpulan
+1. Genre pop-film merupakan genre yang paling favorit di kalangan masyarakat umum, dibuktikan dengan memiliki nilai popularitas tertinggi secara rata-rata dibandingkan dengan genre lainnya, yaitu mendekati skor 60.
+2. Sam Smith dan Kim Petras merupakan penyanyi paling populer menurut orang-orang dalam data tersebut, dibuktikan dengan memiliki nilai popularitas tertinggi dibandingkan penyanyi lainnya, yaitu mendekati 100.
+3. Terdapat beberapa variabel yang berkorelasi, yaitu sebagai berikut
+     * Variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`
+         * Kedua variabel ini berkorelasi positif cukup kuat karena lagu yang memiliki perasaan positif seperti senang tentu juga cocok untuk menari.
+         * Akan aneh apabila lagu sedih bisa digunakan untuk menari, sehingga dapat dilihat bahwa lagu yang yang memang memiliki perasaan negatif seperti sedih dan marah tidak cocok untuk menari.
+     * Variabel `energy` berkorelasi positif yang kuat terhadap variabel `loudness`, namun berkorelasi negatif yang kuat terhadap variabel `acousticness`
+         * Secara umum, semakin keras suara lagu tersebut, semakin berenergi lagu tersebut, terutama pada genre seperti metal music. Oleh karena itu, variabel `energy` dan `loudness` berkorelasi positif yang kuat.
+         * Sementara itu, lagu akustik biasanya menggunakan alat musik akustik yang tentu suaranya lebih pelan dibanding alat musik elektrik, serta lagu akustik biasa dinyanyikan dengan suara yang pelan, indah, dan tanpa batuan mikrofon. Akibatnya, jika lagu tersebut merupakan akustik, tentu energinya lebih rendah dibanding lagu non akustik. Oleh karena itu, variabel `energy` dan `acousticness` berkorelasi negatif yang cukup kuat.
+     * Variabel `loudness` berkorelasi negatif yang cukup kuat terhadap variabel `acousticness` dan variabel `instrumentalness`
+         * Lagu akustik cenderung memiliki suara yang pelan dan indah sehingga suaranya tidak kencang.
+         * Selain itu, musik yang hanya instrumental (hanya iringan alat musik tanpa lirik) cenderung memiliki suara konstan yang cukup kencang dibandingkan dengan musik non instrumental yang iringan musiknya akan sedikit pelan ketika lirik lagu dinyanyikan.
+     * Variabel `instrumentalness` berkorelasi negatif yang cukup kuat terhadap variabel `valence`
+         * Biasanya, suasana ceria dalam lagu dibawakan bersamaan dengan nyanyian lirik lagu. Sementara suasana negatif, terutama sedih, dibawakan hanya dalam bentuk instrumental (contohnya dengan violin saja)
+4. Sistem rekomendasi dapat diimplementasikan dengan menggunakan 2 approach, yaitu content-based filtering approach menggunakan cosine similarity dan collaborativer filtering approach menggunakan embedding layer untuk memberikan sistem rekomendasi terbaik.
+
+## Referensi
+1. Zheng Q, Lam V. Influence of Multiple Music Styles and Composition Styles on College Students' Mental Health. Occup Ther Int. 2022 Jul 12;2022:6167197. doi: 10.1155/2022/6167197. Retraction in: Occup Ther Int. 2023 Oct 4;2023:9763538. doi: 10.1155/2023/9763538. PMID: 35936831; PMCID: PMC9296337.
+2. Welch GF, Biasutti M, MacRitchie J, McPherson GE, Himonides E. Editorial: The Impact of Music on Human Development and Well-Being. Front Psychol. 2020 Jun 17;11:1246. doi: 10.3389/fpsyg.2020.01246. PMID: 32625147; PMCID: PMC7315798.
+3. Schedl, M., Knees, P., McFee, B., & Bogdanov, D. (2021). Music recommendation systems: Techniques, use cases, and challenges. In Recommender systems handbook (pp. 927-971). New York, NY: Springer US.
+4. Dicoding. Diakses pada 7 September 2024 dari https://www.dicoding.com/academies/319-machine-learning-terapan
+5. Kuuse AK, Paulander AS, Eulau L. Characteristics and impacts of live music interventions on health and wellbeing for children, families, and health care professionals in paediatric hospitals: a scoping review. Int J Qual Stud Health Well-being. 2023 Dec;18(1):2180859. doi: 10.1080/17482631.2023.2180859. PMID: 36880806; PMCID: PMC10013212.
