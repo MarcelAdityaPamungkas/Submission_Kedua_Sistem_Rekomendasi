@@ -285,7 +285,7 @@ Pada content-based filtering, metrik evaluasi yang digunakan adalah skor f1, aku
 
 Matriks Confusion merupakan sebuah tabel untuk mengukur akurasi dari model klasifikasi. Contoh dari Matriks Confusion beserta labelnya dapat dilihat pada gambar di bawah ini. 
 
-<img src = "gambar/Confusion_Matrix_5.png"/> <br>
+<img src = "gambar/16. Confusion_Matrix (1).png"/> <br>
 
 Setiap baris pada matriks confusion merepresentasikan nilai sesungguhnya, sedangkan setiap kolom pada matriks confusion merepresentasikan nilai yang diprediksi. Terdapat 4 label pada matriks confusion seperti yang terlihat di gambar, yaitu TP, TN, FP, dan FN.
 1. *True Positive* (TP) merupakan jumlah data pada positif yang ditebak dengan benar.
@@ -310,7 +310,7 @@ Selanjutnya, metrik evaluasi yang digunakan berdasarkan label-label yang diketah
 
 Pada content-based filtering, diperoleh gambar sebagai berikut. 
 
-<img src = "gambar/16. Confusion Matrix.png"/> <br>
+<img src = "gambar/17. Confusion Matrix (2).png"/> <br>
 
 Dari gambar di atas, dapat dilihat bahwa nilai dari precision belum terlalu bagus, yaitu 0.5. Tentunya nilai tersebut akan berubah-ubah tergantung dengan preferensi dari user. 
 
@@ -333,7 +333,7 @@ Jika nilai prediksi sangat mendekati nilai sesungguhnya, maka nilai dari $(y_i -
 
 #### Penerapan Evaluasi Model dengan RMSE
 
-Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RMSE = 0.0303` untuk data training dan `RMSE = 0.1892` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
+Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RMSE = 0.0315` untuk data training dan `RMSE = 0.1886` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
 
 <img src = "gambar/11. Metrik Evaluasi.png"/> <br>
 
