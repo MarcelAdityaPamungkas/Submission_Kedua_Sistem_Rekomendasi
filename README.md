@@ -281,7 +281,7 @@ ID Track: 6GG73Jik4jUlQCkKg9JuGO, Judul Track: The Middle
 
 Pada content-based filtering, metrik evaluasi yang digunakan adalah skor f1, akurasi, dan matriks confusion. Akan dijelaskan terlebih dahulu bagaimana cara mendapatkan akurasi dan f1 score serta bagaimana cara menggunakan confusion matrix.
 
-### Sekilas Tentang Matriks Confusion, Akurasi, dan Skor f1
+#### Sekilas Tentang Matriks Confusion, Akurasi, dan Skor f1
 
 Matriks Confusion merupakan sebuah tabel untuk mengukur akurasi dari model klasifikasi. Contoh dari Matriks Confusion beserta labelnya dapat dilihat pada gambar di bawah ini. 
 
@@ -295,20 +295,30 @@ Setiap baris pada matriks confusion merepresentasikan nilai sesungguhnya, sedang
 
 Selanjutnya, metrik evaluasi yang digunakan berdasarkan label-label yang diketahui dari matriks confusion ada 4, yaitu sebagai berikut.
 1. Akurasi (*Accuracy*) merupakan proporsi data yang berhasil diprediksi dengan benar dari seluruh data yang diprediksi. Akurasi dirumuskan sebagai <br>
-<img src = "gambar/Rumus_Akurasi.png"/> <br>
+<img src = "gambar/12. Rumus_Akurasi.png"/> <br>
 
 2. *Precision* merupakan proporsi data positif yang berhasil diprediksi dengan benar dari seluruh data yang diprediksi positif. *Precision* dirumuskan sebagai <br>
-<img src = "gambar/Rumus_Precision.png"/> <br>
+<img src = "gambar/13. Rumus_Precision.png"/> <br>
 
 3. *Recall* merupakan proporsi data positif yang berhasil diprediksi dengan benar dari seluruh data yang aslinya positif. *Recall* dirumuskan sebagai <br>
-<img src = "gambar/Rumus_Recall.png"/> <br>
+<img src = "gambar/14. Rumus_Recall.png"/> <br>
 
 4. Skor F1 (F1 *score*) merupakan rata-rata harmonik dari *precision* dan *recall* untuk mendapatkan sebuah metrik yang seimbang. Skor F1 dirumuskan sebagai <br>
-<img src = "gambar/Rumus_SkorF1.png"/> <br>
+<img src = "gambar/15. Rumus_SkorF1.png"/> <br>
 
-Perlu diperhatikan bahwa tidak ada evaluasi pada penggunaan cosine similarity, sehingga hanya pada collaborative filtering yang akan dievaluasi hasilnya. Pada pelatihan model tersebut, metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE)
+#### Penerapan Evaluasi Model dengan Matriks Confusion, Akurasi, dan Skor f1
 
-### Sekilas tentang RMSE
+Pada content-based filtering, diperoleh gambar sebagai berikut. 
+
+<img src = "gambar/16. Rumus_SkorF1.png"/> <br>
+
+Dari gambar di atas, dapat dilihat bahwa nilai dari precision belum terlalu bagus, yaitu 0.5. Tentunya nilai tersebut akan berubah-ubah tergantung dengan preferensi dari user. 
+
+### 2. Collaborative Filtering
+
+Pada collaborative filtering, metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE). 
+
+#### Sekilas tentang RMSE
 
 Root Mean Squared Error (RMSE) merupakan salah satu metode untuk menghitung error pada pelatihan model dengan cara menghitung jarak rata-rata antara nilai yang diprediksi dengan nilai sesungguhnya. RMSE dirumuskan sebagai berikut.
 
@@ -321,7 +331,7 @@ Keterangan:
 
 Jika nilai prediksi sangat mendekati nilai sesungguhnya, maka nilai dari $(y_i - \hat{y_i})$ akan semakin mengecil. Artinya, semakin kecil nilai dari RSME atau bahkan mendekati nol, maka model yang digunakan telah akurat dan baik.
 
-### Evaluasi Model
+#### Penerapan Evaluasi Model dengan RMSE
 
 Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RMSE = 0.0303` untuk data training dan `RMSE = 0.1892` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
 
