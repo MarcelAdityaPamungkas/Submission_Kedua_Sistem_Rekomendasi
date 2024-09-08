@@ -182,8 +182,13 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Pada gambar `Top 10 Penyanyi dengan Rata-Rata Popularitas Tertinggi`, Sam Smith dan Kim Petras memiliki nilai popularitas tertinggi dibandingkan penyanyi lainnya, yaitu mendekati 100.
 
 ## Data Preparation
+Sebelum diproses, data akan diperiksa terlebih dahulu apakah terdapat data null ataupun data duplikat. Dengan `data[data.isnull().any(axis = 1)]`, didapat 
 
-Karena data yang digunakan sedikit berbeda antara content-based filtering dengan collaborative filtering, maka data preparation dari kedua approach tersebut akan dilakukan secara masing-masing.
+| No | track_id | artists | album_name | track_name |
+|---|---|---|---|---|
+| 65900 | 1kR4gIb7nGxHPI3D2ifs59 | NaN | NaN | NaN |
+
+sehingga baris tersebut dihapus. Selanjutnya, dengan `data.duplicated().sum()`, didapat total 450 data duplikat. Setelah diperiksa, tidak terlihat adanya data duplikat sepenuhnya, sehingga data ini tidak akan dihapus. Karena data yang digunakan sedikit berbeda antara content-based filtering dengan collaborative filtering, maka data preparation dari kedua approach tersebut akan dilakukan secara masing-masing.
 
 ### 1. Content-Based Filtering
 Untuk content-based filtering, kita akan fokus pada judul lagu beserta genre dari lagu tersebut. Oleh karena itu, kita hanya akan mengambil 4 kolom dari data yang dimiliki, yaitu
@@ -271,6 +276,35 @@ ID Track: 7e89621JPkKaeDSTQ3avtg, Judul Track: Sweet Home Alabama\
 ID Track: 6GG73Jik4jUlQCkKg9JuGO, Judul Track: The Middle
 
 ## Evaluation
+
+### 1. Content-Based Filtering
+
+Pada content-based filtering, metrik evaluasi yang digunakan adalah skor f1, akurasi, dan matriks confusion. Akan dijelaskan terlebih dahulu bagaimana cara mendapatkan akurasi dan f1 score serta bagaimana cara menggunakan confusion matrix.
+
+### Sekilas Tentang Matriks Confusion, Akurasi, dan Skor f1
+
+Matriks Confusion merupakan sebuah tabel untuk mengukur akurasi dari model klasifikasi. Contoh dari Matriks Confusion beserta labelnya dapat dilihat pada gambar di bawah ini. 
+
+<img src = "gambar/Confusion_Matrix_5.png"/> <br>
+
+Setiap baris pada matriks confusion merepresentasikan nilai sesungguhnya, sedangkan setiap kolom pada matriks confusion merepresentasikan nilai yang diprediksi. Terdapat 4 label pada matriks confusion seperti yang terlihat di gambar, yaitu TP, TN, FP, dan FN.
+1. *True Positive* (TP) merupakan jumlah data pada positif yang ditebak dengan benar.
+2. *True Negative* (TN) merupakan jumlah data pada negatif yang ditebak dengan benar.
+3. *False Positive* (FP) merupakan jumlah data yang ditebak dengan salah karena diprediksi positif, sedangkan aslinya adalah negatif. Kesalahan ini sering disebut Error Tipe 1.
+4. *False Negative* (FN) merupakan jumlah data yang ditebak dengan salah karena diprediksi negatif, sedangkan aslinya adalah positif. Kesalahan ini sering disebut Error Tipe 2.
+
+Selanjutnya, metrik evaluasi yang digunakan berdasarkan label-label yang diketahui dari matriks confusion ada 4, yaitu sebagai berikut.
+1. Akurasi (*Accuracy*) merupakan proporsi data yang berhasil diprediksi dengan benar dari seluruh data yang diprediksi. Akurasi dirumuskan sebagai <br>
+<img src = "gambar/Rumus_Akurasi.png"/> <br>
+
+2. *Precision* merupakan proporsi data positif yang berhasil diprediksi dengan benar dari seluruh data yang diprediksi positif. *Precision* dirumuskan sebagai <br>
+<img src = "gambar/Rumus_Precision.png"/> <br>
+
+3. *Recall* merupakan proporsi data positif yang berhasil diprediksi dengan benar dari seluruh data yang aslinya positif. *Recall* dirumuskan sebagai <br>
+<img src = "gambar/Rumus_Recall.png"/> <br>
+
+4. Skor F1 (F1 *score*) merupakan rata-rata harmonik dari *precision* dan *recall* untuk mendapatkan sebuah metrik yang seimbang. Skor F1 dirumuskan sebagai <br>
+<img src = "gambar/Rumus_SkorF1.png"/> <br>
 
 Perlu diperhatikan bahwa tidak ada evaluasi pada penggunaan cosine similarity, sehingga hanya pada collaborative filtering yang akan dievaluasi hasilnya. Pada pelatihan model tersebut, metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE)
 
