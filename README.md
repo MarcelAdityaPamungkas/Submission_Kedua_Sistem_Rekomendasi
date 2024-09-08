@@ -310,7 +310,7 @@ Selanjutnya, metrik evaluasi yang digunakan berdasarkan label-label yang diketah
 
 Pada content-based filtering, diperoleh gambar sebagai berikut. 
 
-<img src = "gambar/16. Rumus_SkorF1.png"/> <br>
+<img src = "gambar/16. Confusion Matrix.png"/> <br>
 
 Dari gambar di atas, dapat dilihat bahwa nilai dari precision belum terlalu bagus, yaitu 0.5. Tentunya nilai tersebut akan berubah-ubah tergantung dengan preferensi dari user. 
 
