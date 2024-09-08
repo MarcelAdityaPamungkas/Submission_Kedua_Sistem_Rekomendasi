@@ -78,13 +78,13 @@ Sementara kolom-kolom lainnya yaitu [`track_id`, `artists`, `album_name`, `track
 
 #### 1. Analisis Kolom `Explicit`
 
-<img src = "gambar/01. Distribusi Kolom Explisit.png"/> <br>
+![01 Distribusi Kolom Explisit](https://github.com/user-attachments/assets/f7283fe1-ee8f-407a-99e7-33ae3c77be30)
 
 Dari gambar di atas, hanya 8.55% dari seluruh lagu pada dataset yang memiliki lirik bersifat eksplisit. 
 
 #### 2. Distribusi Kolom Numerikal Menggunakan Histogram
 
-<img src = "gambar/02. Histogram dari Kolom Numerikal.png"/> <br>
+![02 Histogram dari Kolom Numerikal](https://github.com/user-attachments/assets/f0c5992a-3ebd-4b35-92ee-4105a7d89c60)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Kolom `danceability`, `valence`, dan `tempo` mendekati distribusi normal. Kolom `popularity` juga mendekati distribusi normal, namun mayoritas data bernilai 0.
@@ -108,7 +108,7 @@ Berdasarkan 3 tingkatan tersebut, korelasi dibagi menjadi 2, yaitu korelasi posi
 
 Berikut merupakan heatmap dari kolom-kolom numerikal pada dataset.
 
-<img src = "gambar/03. Heatmap Kolom Numerikal.png"/> <br>
+![03 Heatmap Kolom Numerikal](https://github.com/user-attachments/assets/f91ebf2e-10ac-4297-9dc9-cc43669d2737)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`
@@ -120,7 +120,7 @@ Selain yang disebutkan di atas, seluruh variabel memiliki korelasi yang lemah an
 
 #### 4. Korelasi Variabel `danceability` dengan `valence`
 
-<img src = "gambar/04. Scatter Plot (1).png"/> <br>
+![04 Scatter Plot (1)](https://github.com/user-attachments/assets/3c172d4b-3fde-4b34-902a-2a308a0d6fff)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `danceability` berkorelasi positif yang cukup kuat terhadap variabel `valence`, terlihat dari garis yang mengarah ke atas kanan.
@@ -129,7 +129,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 5. Korelasi Variabel `energy` dengan `loudness` dan `acousticness`
 
-<img src = "gambar/05. Scatter Plot (2).png"/> <br>
+![05 Scatter Plot (2)](https://github.com/user-attachments/assets/8b3e905c-0998-4fd1-80fc-de85eaa4d130)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `energy` berkorelasi positif yang kuat terhadap variabel `loudness`, terlihat dari garis yang mengarah ke atas kanan, tetapi berkorelasi negatif yang cukup kuat terhadap variabel `acousticness`, terlihat dari garis yang mengarah ke bawah kanan.
@@ -138,7 +138,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 6. Korelasi Variabel `loudness` dengan `acousticness` dan `instrumentalness`
 
-<img src = "gambar/06. Scatter Plot (3).png"/> <br>
+![06 Scatter Plot (3)](https://github.com/user-attachments/assets/1a551822-f796-4e9f-b49d-9b220cf7eecb)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `loudness` berkorelasi negatif yang cukup kuat terhadap variabel `acousticness` dan `instrumentalness`, terlihat dari garis yang mengarah ke bawah kanan.
@@ -147,7 +147,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 7. Korelasi Variabel `instrumentalness` dengan `valence`
 
-<img src = "gambar/07. Scatter Plot (4).png"/> <br>
+![07 Scatter Plot (4)](https://github.com/user-attachments/assets/d0d123c8-a32e-46aa-a799-395695509469)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Terlihat bahwa variabel `instrumentalness` berkorelasi negatif yang cukup kuat terhadap variabel `valence`, terlihat dari garis yang mengarah ke bawah kanan.
@@ -155,7 +155,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 #### 8. Top 10 Album dengan Jumlah Musik Terbanyak
 
-<img src = "gambar/08. Top 10 Album.png"/> <br>
+![08 Top 10 Album](https://github.com/user-attachments/assets/acaf061e-fae6-4ac2-9859-1f9de8df612a)
 
 Dari gambar di atas, album `Alternative Christmas 2022` merupakan album yang memiliki jumlah lagu terbanyak, hingga mendekati 200 lagu.
 
@@ -163,7 +163,7 @@ Dari gambar di atas, album `Alternative Christmas 2022` merupakan album yang mem
 
 Setelah mencari jumlah data unik pada kolom `track_genre` dengan `unique_genres = data["track_genre"].unique()`, didapat 114 genre yang ada di dalam dataset tersebut. Selanjutnya, akan dianalisis beberapa kolom berdasarkan genrenya.
 
-<img src = "gambar/09. Top 10 Genre.png"/> <br>
+![09 Top 10 Genre](https://github.com/user-attachments/assets/285bf842-ab59-43b3-90b3-68cae9f0e1b6)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Pada gambar `Top 10 Jumlah Penyanyi Pada Setiap Genre`, genre dubstep merupakan genre yang memiliki artis terbanyak, berjumlah lebih dari 700.
@@ -175,7 +175,7 @@ Gambar di atas dapat diinterpretasikan sebagai berikut.
 
 Setelah mencari jumlah data unik pada kolom `artists` dengan `unique_artist = data["artists"].unique()`, didapat 31437 penyanyi yang ada di dalam dataset tersebut. Selanjutnya, akan dicari top 10 dari beberapa kolom berdasarkan penyanyinya.
 
-<img src = "gambar/10. Top 10 Penyanyi.png"/> <br>
+![10 Top 10 Penyanyi](https://github.com/user-attachments/assets/f8d330ed-a1d2-4735-9587-f7979efd3a77)
 
 Gambar di atas dapat diinterpretasikan sebagai berikut.
 * Pada gambar `Top 10 Penyanyi dengan Jumlah Lagu terbanyak`, The Beatles telah membuat lagu terbanyak dibandingkan penyanyi lainnya, yaitu lebih dari 250.
@@ -285,7 +285,7 @@ Pada content-based filtering, metrik evaluasi yang digunakan adalah skor f1, aku
 
 Matriks Confusion merupakan sebuah tabel untuk mengukur akurasi dari model klasifikasi. Contoh dari Matriks Confusion beserta labelnya dapat dilihat pada gambar di bawah ini. 
 
-<img src = "gambar/16. Confusion_Matrix (1).png"/> <br>
+![16 Confusion Matrix (1)](https://github.com/user-attachments/assets/fe6cdfe3-c337-4543-a7e4-b2704e2a41f6)
 
 Setiap baris pada matriks confusion merepresentasikan nilai sesungguhnya, sedangkan setiap kolom pada matriks confusion merepresentasikan nilai yang diprediksi. Terdapat 4 label pada matriks confusion seperti yang terlihat di gambar, yaitu TP, TN, FP, dan FN.
 1. *True Positive* (TP) merupakan jumlah data pada positif yang ditebak dengan benar.
@@ -295,24 +295,26 @@ Setiap baris pada matriks confusion merepresentasikan nilai sesungguhnya, sedang
 
 Selanjutnya, metrik evaluasi yang digunakan berdasarkan label-label yang diketahui dari matriks confusion ada 4, yaitu sebagai berikut.
 1. Akurasi (*Accuracy*) merupakan proporsi data yang berhasil diprediksi dengan benar dari seluruh data yang diprediksi. Akurasi dirumuskan sebagai <br>
-<img src = "gambar/12. Rumus_Akurasi.png"/> <br>
+![12 Rumus_Akurasi](https://github.com/user-attachments/assets/9b039228-37f8-46b2-8c15-461d56a5645a)
 
 2. *Precision* merupakan proporsi data positif yang berhasil diprediksi dengan benar dari seluruh data yang diprediksi positif. *Precision* dirumuskan sebagai <br>
-<img src = "gambar/13. Rumus_Precision.png"/> <br>
+![13 Rumus_Precision](https://github.com/user-attachments/assets/a6d18077-a578-407d-94b5-8834a58b5b8b)
 
 3. *Recall* merupakan proporsi data positif yang berhasil diprediksi dengan benar dari seluruh data yang aslinya positif. *Recall* dirumuskan sebagai <br>
-<img src = "gambar/14. Rumus_Recall.png"/> <br>
+![14 Rumus_Recall](https://github.com/user-attachments/assets/dcbf7601-6cdf-4c5a-9728-c803246240e0)
 
 4. Skor F1 (F1 *score*) merupakan rata-rata harmonik dari *precision* dan *recall* untuk mendapatkan sebuah metrik yang seimbang. Skor F1 dirumuskan sebagai <br>
-<img src = "gambar/15. Rumus_SkorF1.png"/> <br>
+![15 Rumus_SkorF1](https://github.com/user-attachments/assets/b07366f9-3178-4f77-b208-fd117b9ce7d6)
 
 #### Penerapan Evaluasi Model dengan Matriks Confusion, Akurasi, dan Skor f1
 
 Pada content-based filtering, diperoleh gambar sebagai berikut. 
 
-<img src = "gambar/17. Confusion Matrix (2).png"/> <br>
+![17 Confusion Matrix (2)](https://github.com/user-attachments/assets/cdabc0fe-c89b-4c09-a90c-68b4cf3e5f24)
 
-Dari gambar di atas, dapat dilihat bahwa nilai dari precision belum terlalu bagus, yaitu 0.5. Tentunya nilai tersebut akan berubah-ubah tergantung dengan preferensi dari user. 
+Dari gambar di atas, dapat dilihat bahwa untuk relevan, nilai dari precision belum terlalu bagus, yaitu 0.5. Namun, nilai dari recall sendiri yaitu 1 yang bisa dibilang bagus. Oleh karena precision sebesar 0.5 dan recall sebesar 1, maka didapat nilai f1 score sebesar 0.67 untuk relevan. Selanjutnya, untuk yang tidak relevan, karena precision dan recall keduanya bernilai 0, maka didapat f1 score juga bernilai 0. 
+
+Berdasarkan gambar, karena hanya 5 rekomendasi yang berhasil direkomendasikan sesuai, maka diperoleh akurasi sebesar 50%. Tentunya nilai tersebut akan berubah-ubah tergantung dengan preferensi dari user. 
 
 ### 2. Collaborative Filtering
 
@@ -335,7 +337,7 @@ Jika nilai prediksi sangat mendekati nilai sesungguhnya, maka nilai dari $(y_i -
 
 Pada collaborative filtering, setelah melatih model sebanyak 50 epoch, diperoleh hasil `RMSE = 0.0315` untuk data training dan `RMSE = 0.1886` untuk data testing. Jika dilihat menggunakan grafik, diperoleh plot sebagai berikut.
 
-<img src = "gambar/11. Metrik Evaluasi.png"/> <br>
+![11 Metrik Evaluasi](https://github.com/user-attachments/assets/3a507097-6850-4a35-87fe-fa88966ac410)
 
 Dari gambar tersebut, terlihat bahwa nilai RMSE pada data training selalu menurun, sementara nilai RSME pada data testing awalnya menurun, namun setelah 10 epoch, nilai RSME mulai stagnan. Meski RSME pada data testing lebih besar dari data training, namun karena keduanya telah bernilai sangat mendekati 0, maka model yang digunakan telah baik dan akurat untuk membuat sistem rekomendasi.
 
